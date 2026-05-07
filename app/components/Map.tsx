@@ -1,7 +1,10 @@
-export default function Map() {
-  const address = "C. Bernabé Soriano, 30, 23001 Jaén, España";
-  const encodedAddress = encodeURIComponent(address);
+'use client';
 
+import dynamic from "next/dynamic";
+
+const MapContent = dynamic(() => import("./MapContent"), { ssr: false });
+
+export default function Map() {
   return (
     <section id="ubicacion" className="py-16 px-6 bg-white">
       <div className="max-w-6xl mx-auto">
@@ -20,16 +23,7 @@ export default function Map() {
               <a href="tel:+34666222901" className="text-pink-600 hover:text-pink-700">+34 666 222 901</a>
             </div>
           </div>
-          <div className="rounded-lg overflow-hidden shadow-lg h-96">
-            <iframe
-              width="100%"
-              height="100%"
-              frameBorder="0"
-              src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyDKnz7S1Gs2lEjQU5pPANz0zqV6FiJJvtE&q=${encodedAddress}`}
-              allowFullScreen
-              loading="lazy"
-            ></iframe>
-          </div>
+          <MapContent />
         </div>
       </div>
     </section>
