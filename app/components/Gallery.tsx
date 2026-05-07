@@ -32,9 +32,6 @@ export default function Gallery() {
                 fill
                 className="object-contain p-3 group-hover:scale-110 transition-transform duration-300"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                <p className="text-white font-semibold text-lg">{image.title}</p>
-              </div>
             </div>
           ))}
         </div>
