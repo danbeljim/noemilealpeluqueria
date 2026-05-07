@@ -14,7 +14,7 @@ const customIcon = new L.Icon({
 });
 
 export default function MapContent() {
-  const position: [number, number] = [37.7669, -3.7923];
+  const position: [number, number] = [37.7667799, -3.7876092];
 
   return (
     <div className="rounded-lg overflow-hidden shadow-lg h-96">
