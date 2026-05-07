@@ -18,21 +18,21 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonios" className="py-16 px-6 bg-white">
+    <section id="testimonios" className="py-32 px-6 bg-gray-50">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">
-          Lo que Dicen Nuestras Clientas
+        <h2 className="text-5xl font-light text-center mb-20 text-gray-900">
+          Opiniones
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, i) => (
-            <div key={i} className="bg-pink-50 p-6 rounded-lg shadow-md">
-              <div className="flex mb-3">
+            <div key={i} className="bg-white p-8 rounded-sm border border-gray-200">
+              <div className="flex mb-4">
                 {[...Array(testimonial.rating)].map((_, j) => (
-                  <span key={j} className="text-yellow-400">★</span>
+                  <span key={j} className="text-gray-400">★</span>
                 ))}
               </div>
-              <p className="text-gray-700 mb-4 italic">"{testimonial.comment}"</p>
-              <p className="font-semibold text-gray-900">- {testimonial.name}</p>
+              <p className="text-gray-700 mb-6 font-light leading-relaxed text-sm">"{testimonial.comment}"</p>
+              <p className="font-light text-gray-900 text-sm">{testimonial.name}</p>
             </div>
           ))}
         </div>
