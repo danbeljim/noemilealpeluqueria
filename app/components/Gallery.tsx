@@ -18,11 +18,11 @@ export default function Gallery() {
         <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">
           Galería de Trabajos
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {galleryImages.map((image) => (
             <div
               key={image.id}
-              className="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition h-64 cursor-pointer"
+              className="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition h-96 cursor-pointer"
             >
               <Image
                 src={image.src}
