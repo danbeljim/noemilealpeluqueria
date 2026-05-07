@@ -10,7 +10,7 @@ export default function Footer() {
           <div>
             <h3 className="font-bold mb-4">Contacto</h3>
             <p className="text-gray-400">📍 Jaén, España</p>
-            <p className="text-gray-400">📞 +34 XXX XXX XXX</p>
+            <p className="text-gray-400">📞 +34 666 222 901</p>
             <p className="text-gray-400">📧 info@noemileal.es</p>
           </div>
           <div>
