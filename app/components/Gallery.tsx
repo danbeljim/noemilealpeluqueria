@@ -1,12 +1,14 @@
 'use client';
 
+import Image from "next/image";
+
 const galleryImages = [
-  { id: 1, title: "Corte Moderno" },
-  { id: 2, title: "Color Radiante" },
-  { id: 3, title: "Diseño Elegante" },
-  { id: 4, title: "Transformación Completa" },
-  { id: 5, title: "Volumen y Brillo" },
-  { id: 6, title: "Peinado Especial" }
+  { id: 1, src: "/gallery/imagen1.jpg", title: "Corte Moderno" },
+  { id: 2, src: "/gallery/imgen2.jpg", title: "Color Radiante" },
+  { id: 3, src: "/gallery/imagen3.jpg", title: "Diseño Elegante" },
+  { id: 4, src: "/gallery/imagen4.jpg", title: "Transformación Completa" },
+  { id: 5, src: "/gallery/imagen5.jpg", title: "Volumen y Brillo" },
+  { id: 6, src: "/gallery/imagen6.jpg", title: "Peinado Especial" }
 ];
 
 export default function Gallery() {
@@ -20,18 +22,18 @@ export default function Gallery() {
           {galleryImages.map((image) => (
             <div
               key={image.id}
-              className="bg-gray-300 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition h-64 flex items-center justify-center cursor-pointer group"
+              className="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition h-64 cursor-pointer"
             >
-              <div className="text-center group-hover:opacity-100 opacity-70">
-                <p className="text-white text-lg font-semibold">{image.title}</p>
-                <p className="text-white text-sm mt-2">[Foto de cliente]</p>
-              </div>
+              <Image
+                src={image.src}
+                alt={image.title}
+                width={400}
+                height={300}
+                className="w-full h-full object-cover hover:scale-105 transition"
+              />
             </div>
           ))}
         </div>
-        <p className="text-center text-gray-600 mt-8 text-sm">
-          * Aquí irán las fotos de tus trabajos realizados
-        </p>
       </div>
     </section>
   );
