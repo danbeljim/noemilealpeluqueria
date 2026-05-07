@@ -28,17 +28,21 @@ export default function Gallery() {
           navigation
           pagination={{ clickable: true }}
           slidesPerView={1}
-          spaceBetween={30}
-          className="rounded-lg overflow-hidden shadow-lg"
+          breakpoints={{
+            640: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 }
+          }}
+          spaceBetween={20}
+          className="rounded-lg"
         >
           {galleryImages.map((image) => (
             <SwiperSlide key={image.id}>
-              <div className="relative w-full h-96">
+              <div className="relative w-full h-80 rounded-lg overflow-hidden shadow-md">
                 <Image
                   src={image.src}
                   alt={image.title}
                   fill
-                  className="object-contain bg-white"
+                  className="object-cover"
                   priority={image.id === 1}
                 />
               </div>
