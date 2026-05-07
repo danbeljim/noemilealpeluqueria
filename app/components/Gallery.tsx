@@ -1,6 +1,11 @@
 'use client';
 
 import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const galleryImages = [
   { id: 1, src: "/gallery/imagen1.jpg", title: "Corte Moderno" },
@@ -14,26 +19,32 @@ const galleryImages = [
 export default function Gallery() {
   return (
     <section id="galeria" className="py-16 px-6 bg-gray-50">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">
           Galería de Trabajos
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <Swiper
+          modules={[Navigation, Pagination]}
+          navigation
+          pagination={{ clickable: true }}
+          slidesPerView={1}
+          spaceBetween={30}
+          className="rounded-lg overflow-hidden shadow-lg"
+        >
           {galleryImages.map((image) => (
-            <div
-              key={image.id}
-              className="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition h-96 cursor-pointer"
-            >
-              <Image
-                src={image.src}
-                alt={image.title}
-                width={400}
-                height={300}
-                className="w-full h-full object-cover hover:scale-105 transition"
-              />
-            </div>
+            <SwiperSlide key={image.id}>
+              <div className="relative w-full h-96">
+                <Image
+                  src={image.src}
+                  alt={image.title}
+                  fill
+                  className="object-contain bg-white"
+                  priority={image.id === 1}
+                />
+              </div>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </div>
     </section>
   );
